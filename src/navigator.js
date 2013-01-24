@@ -205,14 +205,17 @@ $.extend( $.Navigator.prototype, $.EventHandler.prototype, $.Viewer.prototype, {
             bottomright = this.viewport.pixelFromPoint( bounds.getBottomRight() );
 
             //update style for navigator-box    
-            (function(style){
-
-                style.top    = topleft.y + 'px';
-                style.left   = topleft.x + 'px';
-                style.width  = ( Math.abs( topleft.x - bottomright.x ) - 3 ) + 'px';
-                style.height = ( Math.abs( topleft.y - bottomright.y ) - 3 ) + 'px';
-
-            }( this.displayRegion.style ));  
+            try
+            {
+                (function(style){
+    
+                    style.top    = topleft.y + 'px';
+                    style.left   = topleft.x + 'px';
+                    style.width  = ( Math.abs( topleft.x - bottomright.x ) - 3 ) + 'px';
+                    style.height = ( Math.abs( topleft.y - bottomright.y ) - 3 ) + 'px';
+    
+                }( this.displayRegion.style ));  
+            } catch (e){}
         } 
 
     }
