@@ -1,4 +1,3 @@
-
 (function( $ ){
     
 /**
@@ -39,7 +38,7 @@ $.DziTileSource = function( width, height, tileSize, tileOverlap, tilesUrl, file
     this._levelRects  = {};
     this.tilesUrl     = options.tilesUrl;
     this.fileFormat   = options.fileFormat;
-    this.displayRects = options.displayRects;
+    this.displayRects = options.dispRects;
     
     if ( this.displayRects ) {
         for ( i = this.displayRects.length - 1; i >= 0; i-- ) {
